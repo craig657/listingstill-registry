@@ -1,0 +1,95 @@
+{
+ "version": "2026.10.07.1",
+ "note": "County ArcGIS parcel layers (public record). One entry per county; nothing here is code. Every URL was verified live on 2026-09-19 (layer metadata + a point query). Only the fields named here are requested — never owner names. Queries ask the server for outSR=4326, so nothing is reprojected locally. tx-frio (2026-10-07): the CAD's own ArcGIS layer behind its Pritchard & Abbott web map, found through the webmap's operational layers; the situs is three fields (addressFields), StatedArea reads \"146.76 a\" (the geometry's — Accounts.Acres is per account and splits a lot). REGISTRY (2026-10-07): this same file is fetched from registry.url and merged over the bundled copy (remote wins by id, new counties appended); requestEmail / requestURL is where \"Request my county\" goes.",
+ "registry": {
+  "url": "https://raw.githubusercontent.com/craig657/listingstill-registry/main/parcel-sources.json",
+  "requestEmail": null,
+  "requestURL": null
+ },
+ "sources": [
+  {
+   "id": "tx-travis",
+   "name": "Travis Central Appraisal District parcels",
+   "county": "Travis",
+   "state": "TX",
+   "layerURL": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/EXTERNAL_tcad_parcel/FeatureServer/0",
+   "idField": "PROP_ID",
+   "addressField": "SITUS",
+   "legalFields": [
+    "PLAT",
+    "LOTS",
+    "BLOCKS"
+   ],
+   "acreageField": null,
+   "bbox": {
+    "minLat": 30.02,
+    "maxLat": 30.63,
+    "minLon": -98.18,
+    "maxLon": -97.36
+   }
+  },
+  {
+   "id": "tx-williamson",
+   "name": "Williamson Central Appraisal District parcels",
+   "county": "Williamson",
+   "state": "TX",
+   "layerURL": "https://gis.wilco.org/arcgis/rest/services/public/county_wcad_parcels/MapServer/0",
+   "idField": "PropertyID",
+   "addressField": "SitusAddress",
+   "legalFields": [
+    "LegalDesc"
+   ],
+   "acreageField": "Acres",
+   "bbox": {
+    "minLat": 30.4,
+    "maxLat": 30.91,
+    "minLon": -98.05,
+    "maxLon": -97.15
+   }
+  },
+  {
+   "id": "tx-bexar",
+   "name": "Bexar County parcels",
+   "county": "Bexar",
+   "state": "TX",
+   "layerURL": "https://maps.bexar.org/arcgis/rest/services/Parcels/MapServer/0",
+   "idField": "PropID",
+   "addressField": "Situs",
+   "legalFields": [
+    "LglDesc"
+   ],
+   "acreageField": "Acres",
+   "bbox": {
+    "minLat": 29.11,
+    "maxLat": 29.77,
+    "minLon": -98.81,
+    "maxLon": -98.11
+   }
+  },
+  {
+   "id": "tx-frio",
+   "name": "Frio County Appraisal District parcels",
+   "county": "Frio",
+   "state": "TX",
+   "layerURL": "https://gisdata.pandai.com/pamaps02/rest/services/Frio/FrioCADPublic/MapServer/0",
+   "idField": "FrioCADWeb.DBO.TaxParcels.Name",
+   "addressField": null,
+   "addressFields": [
+    "FrioCADWeb.DBO.Accounts.Prop_Street_Number",
+    "FrioCADWeb.DBO.Accounts.Prop_Street",
+    "FrioCADWeb.DBO.Accounts.Prop_City"
+   ],
+   "legalFields": [
+    "FrioCADWeb.DBO.Accounts.Legal1",
+    "FrioCADWeb.DBO.Accounts.Legal2"
+   ],
+   "acreageField": "FrioCADWeb.DBO.TaxParcels.StatedArea",
+   "bbox": {
+    "minLat": 28.55,
+    "maxLat": 29.1,
+    "minLon": -99.42,
+    "maxLon": -98.79
+   }
+  }
+ ]
+}
