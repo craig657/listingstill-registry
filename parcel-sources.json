@@ -14,6 +14,9 @@
    "state": "TX",
    "layerURL": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/EXTERNAL_tcad_parcel/FeatureServer/0",
    "idField": "PROP_ID",
+   "idFields": [
+    "PID_10"
+   ],
    "addressField": "SITUS",
    "legalFields": [
     "PLAT",
@@ -35,6 +38,11 @@
    "state": "TX",
    "layerURL": "https://gis.wilco.org/arcgis/rest/services/public/county_wcad_parcels/MapServer/0",
    "idField": "PropertyID",
+   "idFields": [
+    "QuickRefID",
+    "PARCELID",
+    "PropertyNumber"
+   ],
    "addressField": "SitusAddress",
    "legalFields": [
     "LegalDesc"
@@ -54,6 +62,9 @@
    "state": "TX",
    "layerURL": "https://maps.bexar.org/arcgis/rest/services/Parcels/MapServer/0",
    "idField": "PropID",
+   "idFields": [
+    "AcctNumb"
+   ],
    "addressField": "Situs",
    "legalFields": [
     "LglDesc"
@@ -73,6 +84,9 @@
    "state": "TX",
    "layerURL": "https://gisdata.pandai.com/pamaps02/rest/services/Frio/FrioCADPublic/MapServer/0",
    "idField": "FrioCADWeb.DBO.TaxParcels.Name",
+   "idFields": [
+    "FrioCADWeb.DBO.Accounts.Account"
+   ],
    "addressField": null,
    "addressFields": [
     "FrioCADWeb.DBO.Accounts.Prop_Street_Number",
