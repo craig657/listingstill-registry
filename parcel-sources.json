@@ -1,6 +1,6 @@
 {
- "version": "2026.10.07.1",
- "note": "County ArcGIS parcel layers (public record). One entry per county; nothing here is code. Every URL was verified live on 2026-09-19 (layer metadata + a point query). Only the fields named here are requested — never owner names. Queries ask the server for outSR=4326, so nothing is reprojected locally. tx-frio (2026-10-07): the CAD's own ArcGIS layer behind its Pritchard & Abbott web map, found through the webmap's operational layers; the situs is three fields (addressFields), StatedArea reads \"146.76 a\" (the geometry's — Accounts.Acres is per account and splits a lot). REGISTRY (2026-10-07): this same file is fetched from registry.url and merged over the bundled copy (remote wins by id, new counties appended); requestEmail / requestURL is where \"Request my county\" goes.",
+ "version": "2026.10.09.1",
+ "note": "County ArcGIS parcel layers (public record). One entry per county; nothing here is code. Every URL was verified live on 2026-09-19 (layer metadata + a point query). Only the fields named here are requested — never owner names. Queries ask the server for outSR=4326, so nothing is reprojected locally. tx-frio (2026-10-07): the CAD's own ArcGIS layer behind its Pritchard & Abbott web map, found through the webmap's operational layers; the situs is three fields (addressFields), StatedArea reads \"146.76 a\" (the geometry's — Accounts.Acres is per account and splits a lot). REGISTRY (2026-10-07): this same file is fetched from registry.url and merged over the bundled copy (remote wins by id, new counties appended); requestEmail / requestURL is where \"Request my county\" goes. tx-medina (2026-10-09, Craig's Laurel Canyon Ranch lot with no address): the CAD's layer sits behind its BIS Consultants map on an ArcGIS Online proxy (usrsvcs) that answers ONLY with that map's Referer — `headers` carries it, the same way the CAD's own map reaches the data; searchURL = the CAD's public search (eSearch), siteHosts = a pasted link to a record there names the county. Verified live 2026-10-09: layer metadata, a point query, the lot by prop_id_text, the county boundary's extent.",
  "registry": {
   "url": "https://raw.githubusercontent.com/craig657/listingstill-registry/main/parcel-sources.json",
   "requestEmail": null,
@@ -104,6 +104,42 @@
     "minLon": -99.42,
     "maxLon": -98.79
    }
+  },
+  {
+   "id": "tx-medina",
+   "name": "Medina CAD",
+   "county": "Medina",
+   "state": "TX",
+   "layerURL": "https://utility.arcgis.com/usrsvcs/servers/176ee3c2f2e1488fa5e8d782f5e6ede0/rest/services/MedinaCADWebService/FeatureServer/0",
+   "idField": "prop_id_text",
+   "idFields": [
+    "geo_id"
+   ],
+   "addressFields": [
+    "situs_num",
+    "situs_street_prefx",
+    "situs_street",
+    "situs_street_sufix",
+    "situs_city"
+   ],
+   "legalFields": [
+    "legal_desc"
+   ],
+   "acreageField": "legal_acreage",
+   "bbox": {
+    "minLat": 29.0897,
+    "maxLat": 29.6907,
+    "minLon": -99.4163,
+    "maxLon": -98.8037
+   },
+   "headers": {
+    "Referer": "https://gis.bisclient.com/medinacad/"
+   },
+   "searchURL": "https://esearch.medinacad.org/",
+   "siteHosts": [
+    "medinacad.org",
+    "gis.bisclient.com"
+   ]
   }
  ]
 }
